@@ -32,7 +32,6 @@ class UserTable extends React.Component {
             .then(res => {
                 let gr = [];
                 res.data.forEach((element) => {
-                    console.log(element)
                     gr.push({
                         name: element.name,
                         id: element.ID
@@ -41,7 +40,6 @@ class UserTable extends React.Component {
                 this.setState({
                     groups: gr
                 })
-                console.log(this.state.groups)
             })
     }
 
@@ -49,6 +47,7 @@ class UserTable extends React.Component {
         const { Column } = Table;
         return (
             <div>
+                <div>
                 <UserFormButton
                     btnName="Add User"
                     requestMethod="post"
@@ -59,6 +58,7 @@ class UserTable extends React.Component {
                     form_title="Add new user"
                     form_ok_text="Add"
                     groups={this.state.groups} />
+                    </div>
                     <br />
                 <Table dataSource={this.state.users} rowKey={(record) => { return record.id }}>
                     <Column title="Username" dataIndex="username" />

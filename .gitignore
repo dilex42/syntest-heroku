@@ -44,3 +44,4 @@ Data.fs*
 .DS_Store
 /backend
 /frontend
+*.sqlite3

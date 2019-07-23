@@ -4,22 +4,6 @@ import axios from 'axios';
 
 import { Button, Modal, Form, Input, Select } from 'antd';
 
-// function onChange(value) {
-//     console.log(`selected ${value}`);
-// }
-
-// function onBlur() {
-//     console.log('blur');
-// }
-
-// function onFocus() {
-//     console.log('focus');
-// }
-
-// function onSearch(val) {
-//     console.log('search:', val);
-// }
-
 const UserForm = Form.create({ name: 'form_in_modal' })(
 
     // eslint-disable-next-line
@@ -66,10 +50,6 @@ const UserForm = Form.create({ name: 'form_in_modal' })(
                                 style={{ width: 200 }}
                                 placeholder="Select a group"
                                 optionFilterProp="children"
-                                // onChange={onChange}
-                                // onFocus={onFocus}
-                                // onBlur={onBlur}
-                                // onSearch={onSearch}
                             filterOption={(input, option) =>
                                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                             }
@@ -111,7 +91,6 @@ class UserFormButton extends React.Component {
 
             const name = values.username;
             const user_group = values.group;
-            console.log(user_group, name);
 
             switch (this.props.requestMethod) {
                 case 'post':

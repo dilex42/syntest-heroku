@@ -1,4 +1,3 @@
-/* eslint-disable default-case */
 import React from 'react';
 import axios from 'axios';
 

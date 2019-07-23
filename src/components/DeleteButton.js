@@ -5,7 +5,7 @@ import { Button, Popconfirm } from 'antd';
 class CustomDeleteButton extends React.Component {
 
     handleDelete = () => {
-        axios.delete(`http://localhost:8000/api/${this.props.modelType}/${this.props.ID}/`)
+        axios.delete(`https://syntest-heroku.herokuapp.com/api/${this.props.modelType}/${this.props.ID}/`)
             .then(res => { console.log(res) })
             .catch(error => { console.error(error) })
             .finally(() => this.props.UpdateDataHandler());

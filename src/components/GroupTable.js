@@ -13,7 +13,7 @@ class GroupTable extends React.Component {
         this.UpdateDataHandler = this.UpdateDataHandler.bind(this);
     }
     UpdateDataHandler() {
-        axios.get('http://localhost:8000/api/groups/')
+        axios.get('https://syntest-heroku.herokuapp.com/api/groups/')
             .then(res => {
                 this.setState({
                     groups: res.data
@@ -21,7 +21,7 @@ class GroupTable extends React.Component {
             })
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/api/groups/')
+        axios.get('https://syntest-heroku.herokuapp.com/api/groups/')
             .then(res => {
                 this.setState({
                     groups: res.data

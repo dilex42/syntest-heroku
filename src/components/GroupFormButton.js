@@ -74,7 +74,7 @@ class GroupFormButton extends React.Component {
 
             switch (this.props.requestMethod) {
                 case 'post':
-                    axios.post('http://localhost:8000/api/groups/', {
+                    axios.post('https://syntest-heroku.herokuapp.com/api/groups/', {
                         name: name,
                         description: description
                     })
@@ -85,7 +85,7 @@ class GroupFormButton extends React.Component {
                         .catch(error => console.error(error));
                     break;
                 case 'put':
-                    axios.put(`http://localhost:8000/api/groups/${this.props.groupID}/`, {
+                    axios.put(`https://syntest-heroku.herokuapp.com/api/groups/${this.props.groupID}/`, {
                         name: name,
                         description: description
                     })

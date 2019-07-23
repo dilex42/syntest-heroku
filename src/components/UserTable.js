@@ -14,7 +14,7 @@ class UserTable extends React.Component {
         this.UpdateDataHandler = this.UpdateDataHandler.bind(this);
     }
     UpdateDataHandler() {
-        axios.get('http://localhost:8000/api/users/')
+        axios.get('https://syntest-heroku.herokuapp.com/api/users/')
             .then(res => {
                 this.setState({
                     users: res.data
@@ -22,13 +22,13 @@ class UserTable extends React.Component {
             })
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/api/users/')
+        axios.get('https://syntest-heroku.herokuapp.com/api/users/')
             .then(res => {
                 this.setState({
                     users: res.data
                 })
             })
-        axios.get('http://localhost:8000/api/groups/')
+        axios.get('https://syntest-heroku.herokuapp.com/api/groups/')
             .then(res => {
                 let gr = [];
                 res.data.forEach((element) => {

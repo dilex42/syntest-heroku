@@ -29,7 +29,6 @@ const UserForm = Form.create({ name: 'form_in_modal' })(
             this.state = {
                 groups: []
             }
-            // this.UpdateDataHandler = this.UpdateDataHandler.bind(this);
         }
 
 
@@ -59,8 +58,7 @@ const UserForm = Form.create({ name: 'form_in_modal' })(
                         <Form.Item label="Group">
                             {getFieldDecorator('group', {
                                 rules: [
-                                    { required: true, message: 'Please input the group of the User!' },
-                                    // { max: 120, message: "group cannot be longer than 120 characters" }
+                                    { required: true, message: 'Please input the group of the User!' }
                                 ],
                                 initialValue: group_initial
                             })(<Select
@@ -72,9 +70,9 @@ const UserForm = Form.create({ name: 'form_in_modal' })(
                                 onFocus={onFocus}
                                 onBlur={onBlur}
                                 onSearch={onSearch}
-                            // filterOption={(input, option) =>
-                            //     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            // }
+                            filterOption={(input, option) =>
+                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                            }
                             >
                                 {groups.map((group, i) => <Option value={group.id} key={group.id}>{group.name}</Option>)}
                             </Select>)}
@@ -117,7 +115,7 @@ class UserFormButton extends React.Component {
 
             switch (this.props.requestMethod) {
                 case 'post':
-                    axios.post('http://localhost:8000/api/users/', {
+                    axios.post('https://syntest-heroku.herokuapp.com/api/users/', {
                         username: name,
                         group: user_group
                     })
@@ -128,7 +126,7 @@ class UserFormButton extends React.Component {
                         .catch(error => console.error(error));
                     break;
                 case 'put':
-                    axios.put(`http://localhost:8000/api/users/${this.props.UserID}/`, {
+                    axios.put(`https://syntest-heroku.herokuapp.com/api/users/${this.props.UserID}/`, {
                         username: name,
                         group: user_group
                     })

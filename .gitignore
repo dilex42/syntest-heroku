@@ -42,3 +42,5 @@ Data.fs*
 .*.sw?
 .sw?
 .DS_Store
+/backend
+/frontend

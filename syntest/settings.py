@@ -25,7 +25,7 @@ SECRET_KEY = '0lmah4(n26*chbg$i27k3yf7x1irgjmx4besc+_-)&s86i)0$('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['syntest-heroku.herokuapp.com/','localhost']
+ALLOWED_HOSTS = ['syntest-heroku.herokuapp.com','localhost']
 
 
 # Application definition

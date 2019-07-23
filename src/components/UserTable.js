@@ -56,9 +56,10 @@ class UserTable extends React.Component {
                     UpdateDataHandler={this.UpdateDataHandler}
                     name_initial={null}
                     group_initial={null}
-                    form_title="Add new User"
+                    form_title="Add new user"
                     form_ok_text="Add"
                     groups={this.state.groups} />
+                    <br />
                 <Table dataSource={this.state.users} rowKey={(record) => { return record.id }}>
                     <Column title="Username" dataIndex="username" />
                     <Column title="Created" dataIndex="created" />
@@ -76,7 +77,7 @@ class UserTable extends React.Component {
                                     UpdateDataHandler={this.UpdateDataHandler}
                                     name_initial={record.username}
                                     group_initial={record.group}
-                                    form_title="Edit User information"
+                                    form_title="Edit user information"
                                     form_ok_text="Edit"
                                     groups={this.state.groups} />
                                 <Divider type="vertical" />

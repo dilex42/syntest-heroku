@@ -34,7 +34,7 @@ class GroupTable extends React.Component {
         return (
             <div>
                 <GroupFormButton
-                    btnName="Add group"
+                    btnName="Add Group"
                     requestMethod="post"
                     groupID={null}
                     UpdateDataHandler={this.UpdateDataHandler}
@@ -42,6 +42,7 @@ class GroupTable extends React.Component {
                     description_initial={null}
                     form_title="Create new group"
                     form_ok_text="Create" />
+                    <br />
                 <Table dataSource={this.state.groups} rowKey={(record) => { return record.ID }}>
                     <Column title="ID" dataIndex="ID" />
                     <Column title="Name" dataIndex="name" />
